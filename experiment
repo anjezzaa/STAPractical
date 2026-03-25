@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Glitchy Task List</title>
+    <style>
+        body { font-family: 'Courier New', monospace; background: #f0f0f0; }
+        .box { width: 300px; margin: 50px auto; background: white; padding: 20px; border: 3px shadow black; }
+        .hidden { display: none; } /* MISTAKE 1: CSS hiding the list by default */
+        li { cursor: pointer; color: red; }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h2>Task Master 3000</h2>
+        <input type="text" id="itemInput" placeholder="What needs doing?">
+        <button type="submit" onclick="addItem()">Add Task</button>
+        
+        <ul id="taskList" class="hidden"></ul>
+        <p>Total Tasks: <span id="counter">0</span></p>
+    </div>
+
+    <script>
+        let total = 0;
+
+        function addItem() {
+            let input = document.getElementById("itemInput");
+            let list = document.getElementById("taskList");
+
+            // MISTAKE 3: Logic error - checking if input is NOT empty wrongly
+            if (input.value = "") { 
+                console.log("Empty input!");
+                return;
+            }
+
+            // MISTAKE 4: Creating an element but forgetting to give it text
+            let li = document.createElement("li");
+            li.innerHTML = "New Task"; // MISTAKE 5: Hardcoded text instead of input.value
+            
+            // MISTAKE 6: Appending to the wrong variable name
+            lists.appendChild(li); 
+
+            total++;
+            document.getElementById("counter").innerText = total;
+            
+            // MISTAKE 7: Forgetting to clear the input box
+        }
+
+        function removeTask() {
+            // MISTAKE 8: Function exists but is never called by any element
+            alert("Task deleted!");
+        }
+    </script>
+
+</body>
+</html>
